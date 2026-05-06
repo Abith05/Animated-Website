@@ -32,29 +32,38 @@ lenis.stop();
 // 2. Custom Magnetic Cursor
 const cursor = document.querySelector('.cursor');
 const magnetics = document.querySelectorAll('.magnetic');
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-if (!isMobile) {
-    window.addEventListener('mousemove', (e) => {
-        gsap.to(cursor, {
-            x: e.clientX,
-            y: e.clientY,
-            duration: 0.1,
-            ease: "power2.out"
-        });
+const updateCursor = (x, y) => {
+    gsap.to(cursor, {
+        x: x,
+        y: y,
+        duration: 0.1,
+        ease: "power2.out"
     });
+};
 
-    magnetics.forEach((mag) => {
-        mag.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover-magnetic');
-        });
-        mag.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover-magnetic');
-        });
+window.addEventListener('mousemove', (e) => {
+    updateCursor(e.clientX, e.clientY);
+});
+
+// Mobile Touch Support for Cursor
+window.addEventListener('touchstart', (e) => {
+    if (cursor) cursor.style.opacity = '1';
+    updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+});
+
+window.addEventListener('touchmove', (e) => {
+    updateCursor(e.touches[0].clientX, e.touches[0].clientY);
+});
+
+magnetics.forEach((mag) => {
+    mag.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover-magnetic');
     });
-} else {
-    if (cursor) cursor.style.display = 'none';
-}
+    mag.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover-magnetic');
+    });
+});
 
 
 // 3. Sound Toggle (Engine Purr)
