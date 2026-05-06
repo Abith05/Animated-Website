@@ -723,14 +723,15 @@ canvas#hero-lightpass {
 /* --- Ad Personam Section --- */
 .ad-personam {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: #0a0a0a;
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    z-index: 10;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 50;
 }
 
 .ad-bg {
@@ -740,21 +741,24 @@ canvas#hero-lightpass {
     top: 0;
     left: 0;
     z-index: 1;
+    pointer-events: none;
 }
 
 .ad-bg-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 0.6;
     transition: filter 0.8s ease;
+    will-change: filter;
 }
 
 .ad-content {
     position: relative;
-    z-index: 2;
+    z-index: 52;
     text-align: center;
-    padding-top: 30vh;
+    width: 100%;
+    padding: 10rem 2rem;
 }
 
 .ad-content h2 {
