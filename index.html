@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambo SVJ: Aero-Schematic</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Cinematic Preloader -->
+    <div id="preloader">
+        <div class="loading-content">
+            <div class="loading-title">SVJ AERO-SCHEMATIC</div>
+            <div class="progress">0%</div>
+            <div class="enter-btn magnetic" style="display: none;">START ENGINE</div>
+        </div>
+    </div>
+
+    <!-- Audio Element for V12 Engine -->
+    <audio id="engine-sound" loop autoplay src="assets/engine.mp3"></audio>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo magnetic">SVJ<span>AERO</span></div>
+        <div class="center-logo magnetic">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/df/Lamborghini_Logo.svg" alt="Lamborghini Logo">
+        </div>
+        <div id="sound-toggle" class="magnetic">SOUND: OFF</div>
+    </nav>
+
+    <main>
+        <!-- Hero Section (Scroll-driven Image Sequence with Mouse Parallax) -->
+        <section class="hero-sequence">
+            <div class="hero-sticky">
+                <canvas id="hero-lightpass"></canvas>
+                <div class="feature-text feature-1">
+                    <h1>Aerodynamic Dominance</h1>
+                    <p>Sculpted by the wind.</p>
+                </div>
+                <div class="feature-text feature-2">
+                    <h1>V12 Heart</h1>
+                    <p>Naturally aspirated power.</p>
+                </div>
+                <div class="feature-text feature-3">
+                    <h1>Carbon Fiber Core</h1>
+                    <p>Ultra-lightweight structure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Text Reveal Section -->
+        <section class="details-section">
+            <div class="container">
+                <p class="reveal-text">It’s not just a car. It’s an aerodynamic weapon. Forged in ultra-light carbon
+                    fiber. Sculpted by the wind. Engineered to dominate the asphalt.</p>
+            </div>
+        </section>
+
+        <div class="spacer" style="height: 30vh;"></div>
+
+        <!-- The "Iconic 800" Overview -->
+        <section class="iconic-overview">
+            <div class="iconic-left">
+                <h2 class="massive-numeral magnetic">800</h2>
+            </div>
+            <div class="iconic-right">
+                <div class="iconic-text-block">
+                    <h3>Aero-Vectoring Active</h3>
+                    <p>The ALA 2.0 system actively manages airflow, switching between high downforce and low drag in
+                        milliseconds to corner faster than ever thought possible.</p>
+                </div>
+                <div class="aero-widget-anim magnetic">
+                    <img src="assets/aero_wireframe_1777877053405.png" alt="Aero Wireframe" class="wireframe-img">
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer" style="height: 50vh;"></div>
+
+        <!-- ALA 2.0 Exterior Performance (Staggered Scroll Reveal) -->
+        <section class="exterior-performance">
+            <div class="exterior-header">
+                <h2>ALA 2.0 Exterior</h2>
+            </div>
+            <div class="exterior-cards">
+                <div class="card-anim magnetic">
+                    <div class="card-img-wrapper">
+                        <img src="assets/carbon_roof_1777877245200.png" alt="Carbon Fiber Roof">
+                    </div>
+                    <div class="card-info">
+                        <h4>RTM Molded Roof</h4>
+                        <p>Ultra-lightweight structural integrity combined with naked carbon fiber weave.</p>
+                    </div>
+                </div>
+                <div class="card-anim magnetic">
+                    <div class="card-img-wrapper">
+                        <img src="assets/svj_exhaust_1777877296537.png" alt="Exhaust Setup">
+                    </div>
+                    <div class="card-info">
+                        <h4>High-Mounted Exhaust</h4>
+                        <p>Optimized aerodynamic flow and V12 acoustic perfection echoing pure aggression.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer" style="height: 50vh;"></div>
+
+        <!-- The Aeronautical Cockpit -->
+        <section class="cockpit-section">
+            <div class="cockpit-sticky">
+                <img src="assets/interior_cockpit_1777877745110.png" alt="Interior Cockpit" class="cockpit-img">
+                <div class="cockpit-text">
+                    <h2>Pilot the Machine</h2>
+                    <p>An aeronautical cockpit finished in rich Alcantara and premium leather with electric gold
+                        cross-stitching.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Performance Matrix -->
+        <section class="performance-matrix">
+            <div class="perf-header">
+                <h2>Pure Numbers</h2>
+            </div>
+            <div class="matrix-grid">
+                <div class="stat">
+                    <h3 class="counter" data-target="2.8">0</h3><span class="unit">s</span>
+                    <p>0-100 km/h</p>
+                </div>
+                <div class="stat">
+                    <span class="unit">></span>
+                    <h3 class="counter" data-target="350">0</h3><span class="unit">km/h</span>
+                    <p>Top Speed</p>
+                </div>
+                <div class="stat">
+                    <h3 class="counter" data-target="770">0</h3><span class="unit">CV</span>
+                    <p>Max Power</p>
+                </div>
+                <div class="stat">
+                    <h3 class="counter" data-target="720">0</h3><span class="unit">Nm</span>
+                    <p>Max Torque</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Horizontal Scrolling Gallery -->
+        <section class="horizontal-gallery-container">
+            <div class="horizontal-gallery">
+                <div class="gallery-item">
+                    <img src="assets/detail_wheel_1778043094056.png" alt="Pirelli P Zero Corsa">
+                    <div class="gallery-caption">Forged Golden Bronze Rims</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/carbon_roof_1777877245200.png" alt="Carbon Fiber Roof">
+                    <div class="gallery-caption">Exposed Carbon Weave</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/svj_exhaust_1777877296537.png" alt="Exhaust">
+                    <div class="gallery-caption">High-Mounted V12 Exhaust</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/interior_cockpit_1777877745110.png" alt="Cockpit">
+                    <div class="gallery-caption">Alcantara Cockpit</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Dynamic Driving Modes -->
+        <section class="driving-modes">
+            <div class="modes-bg" id="modes-bg"></div>
+            <div class="modes-container">
+                <h2 class="mode-hover magnetic" data-color="#111" data-bg="assets/hero_image_1777876968277.png">STRADA
+                </h2>
+                <h2 class="mode-hover magnetic" data-color="#ff4500"
+                    data-bg="assets/interior_cockpit_1777877745110.png">SPORT</h2>
+                <h2 class="mode-hover magnetic" data-color="#ff0000" data-bg="assets/svj_exhaust_1777877296537.png">
+                    CORSA</h2>
+                <h2 class="mode-hover magnetic" data-color="#00f0ff" data-bg="assets/aero_wireframe_1777877053405.png">
+                    EGO</h2>
+            </div>
+            <div class="modes-description">
+                <p>Select your telemetry.</p>
+            </div>
+        </section>
+
+        <!-- Engine Sound Section (Elegant Redesign) -->
+        <section class="engine-rev-section">
+            <div class="rev-bg-image">
+                <img src="assets/svj_exhaust_1777877296537.png" alt="SVJ Exhaust" class="parallax-exhaust">
+            </div>
+            <div class="rev-content">
+                <h2>Symphony of the V12</h2>
+                <p>Listen to the naturally aspirated roar</p>
+
+                <div class="rev-play-wrapper">
+                    <div class="rev-ring"></div>
+                    <div class="rev-ring-2"></div>
+                    <button id="rev-btn" class="magnetic play-btn">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="play-icon">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Ad Personam Studio -->
+        <section class="ad-personam">
+            <div class="ad-bg">
+                <img src="assets/hero_image_1777876968277.png" class="ad-bg-img" id="ad-bg-img"
+                    alt="Ad Personam Configuration">
+            </div>
+            <div class="ad-content">
+                <h2>Ad Personam</h2>
+                <p>Make it unique. Make it yours.</p>
+                <div class="color-swatches">
+                    <div class="swatch magnetic" data-color="hue-rotate(-50deg) saturate(3)"
+                        style="background: #a30000;" data-name="Rosso Efesto"></div>
+                    <div class="swatch magnetic" data-color="hue-rotate(60deg) saturate(2)" style="background: #116800;"
+                        data-name="Verde Mantis"></div>
+                    <div class="swatch magnetic" data-color="hue-rotate(200deg) saturate(2)"
+                        style="background: #0033cc;" data-name="Blu Nethuns"></div>
+                    <div class="swatch magnetic" data-color="grayscale(1) brightness(0.4)" style="background: #222;"
+                        data-name="Nero Nemesis"></div>
+                    <div class="swatch magnetic" data-color="none" style="background: #d4af37;" data-name="Oro Elios">
+                    </div>
+                </div>
+                <div class="color-name">Select a shade</div>
+            </div>
+        </section>
+
+        <!-- 5. Technical Specifications Accordion -->
+        <section class="tech-specs">
+            <div class="specs-container">
+                <h2>Technical Specifications</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header magnetic">ENGINE <span class="icon">+</span></button>
+                        <div class="accordion-content">
+                            <ul class="spec-list">
+                                <li><span>Type</span><span>V12, 60°, MPI (Multipoint Injection)</span></li>
+                                <li><span>Displacement</span><span>6,498 cm³ (396.5 cu in)</span></li>
+                                <li><span>Max. Power</span><span>770 CV (566 kW) @ 8,500 rpm</span></li>
+                                <li><span>Max. Torque</span><span>720 Nm (531 lb.-ft.) @ 6,750 rpm</span></li>
+                                <li><span>Cooling</span><span>Water and oil cooling system</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header magnetic">TRANSMISSION <span class="icon">+</span></button>
+                        <div class="accordion-content">
+                            <ul class="spec-list">
+                                <li><span>Transmission</span><span>Electronically controlled all-wheel drive</span></li>
+                                <li><span>Gearbox</span><span>ISR (Independent Shifting Rods) 7-speed</span></li>
+                                <li><span>Clutch</span><span>Dry double plate clutch</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header magnetic">CHASSIS & BODY <span class="icon">+</span></button>
+                        <div class="accordion-content">
+                            <ul class="spec-list">
+                                <li><span>Chassis</span><span>Carbon fiber monocoque with aluminum frames</span></li>
+                                <li><span>Body</span><span>Carbon fiber engine bonnet, fixed side air inlets</span></li>
+                                <li><span>Suspension</span><span>Front and rear active magneto-rheological
+                                        suspension</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header magnetic">PERFORMANCE <span class="icon">+</span></button>
+                        <div class="accordion-content">
+                            <ul class="spec-list">
+                                <li><span>Top Speed</span><span>> 350 km/h (> 217 mph)</span></li>
+                                <li><span>0-100 km/h</span><span>2.8 s</span></li>
+                                <li><span>0-200 km/h</span><span>8.6 s</span></li>
+                                <li><span>Braking 100-0 km/h</span><span>30 m</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- The Luxury Footer -->
+    <footer class="luxury-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/df/Lamborghini_Logo.svg" alt="Lamborghini Logo">
+            </div>
+            <div class="footer-manifesto">
+                <p>REALIZING THE IMPOSSIBLE. CRAFTING THE EXTRAORDINARY.</p>
+            </div>
+            <div class="footer-newsletter">
+                <form class="newsletter-form">
+                    <input type="email" placeholder="JOIN THE LIST" class="newsletter-input">
+                    <button type="submit" class="newsletter-btn magnetic">→</button>
+                </form>
+            </div>
+            <div class="footer-location">
+                <p>KERALA, INDIA</p>
+                <p class="coords">44°39'28.5"N 11°07'33.1"E</p>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>Fuel consumption and emission values of Aventador SVJ; Fuel consumption combined: 17,9 l/100km (WLTP);
+                CO2-emissions combined: 448 g/km (WLTP)</p>
+            <p>&copy; 2026 Automobili Lamborghini S.p.A. A sole shareholder company part of Audi Group.</p>
+            <p>&copy;Abith K Kuriakose,2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Additional Audio for Revving -->
+    <audio id="rev-sound" src="assets/rev.mp3"></audio>
+
+    <!-- Scripts -->
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
