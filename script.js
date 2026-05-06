@@ -32,24 +32,29 @@ lenis.stop();
 // 2. Custom Magnetic Cursor
 const cursor = document.querySelector('.cursor');
 const magnetics = document.querySelectorAll('.magnetic');
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-window.addEventListener('mousemove', (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.1,
-        ease: "power2.out"
+if (!isMobile) {
+    window.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1,
+            ease: "power2.out"
+        });
     });
-});
 
-magnetics.forEach((mag) => {
-    mag.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover-magnetic');
+    magnetics.forEach((mag) => {
+        mag.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover-magnetic');
+        });
+        mag.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover-magnetic');
+        });
     });
-    mag.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover-magnetic');
-    });
-});
+} else {
+    if (cursor) cursor.style.display = 'none';
+}
 
 
 // 3. Sound Toggle (Engine Purr)
