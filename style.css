@@ -1031,3 +1031,67 @@ canvas#hero-lightpass {
         font-size: 3rem;
     }
 }
+
+/* --- Refined Mobile Enhancements --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+    .logo {
+        font-size: 1.1rem;
+    }
+    .center-logo img {
+        height: 30px;
+    }
+    
+    .massive-numeral {
+        font-size: 8rem !important;
+    }
+
+    .matrix-grid {
+        gap: 1.5rem;
+    }
+    .stat h3 {
+        font-size: 2.2rem;
+    }
+
+    .ad-content h2 {
+        font-size: 3rem;
+    }
+    .color-swatches {
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 300px;
+        margin: 0 auto 2rem;
+    }
+    .swatch {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tech-specs {
+        padding: 6rem 5%;
+    }
+    .specs-container h2 {
+        font-size: 2rem;
+    }
+    .accordion-header {
+        font-size: 1rem;
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-text h1 {
+        font-size: 1.8rem;
+    }
+    .reveal-text {
+        font-size: 1.3rem;
+    }
+    .luxury-footer {
+        padding: 4rem 5% 2rem;
+    }
+    .footer-manifesto p {
+        font-size: 0.8rem;
+    }
+}

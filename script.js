@@ -17,13 +17,24 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Sync ScrollTrigger with Lenis
-lenis.on('scroll', ScrollTrigger.update);
-
 gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 gsap.ticker.lagSmoothing(0, 0);
+
+// Hide cursor while scrolling on mobile for better UX
+let scrollTimeout;
+lenis.on('scroll', (e) => {
+    ScrollTrigger.update();
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        gsap.to(cursor, { opacity: 0, duration: 0.2 });
+        window.clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            gsap.to(cursor, { opacity: 1, duration: 0.4 });
+        }, 500);
+    }
+});
 
 // Disable scrolling initially while preloading
 lenis.stop();
